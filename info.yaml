@@ -1,18 +1,26 @@
+# Tiny Tapeout project information
 project:
-  title:        "tt-mac-8bits-signed"
-  author:       "Pham Van Chien - Le Hong Phuc"
-  discord:      "dazzling_mango_50820"
-  description:  "Parameterizable signed 8-bit MAC unit that multiplies inputs and accumulates results each clock cycle"
-  language:     "Verilog"
-  clock_hz:     0
+  title:        "tt-mac-8bits-signed"      # Project title
+  author:       "Pham Van Chien - Le Hong Phuc"      # Your name
+  discord:      "dazzling_mango_50820"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Parameterizable signed 8-bit MAC unit that multiplies inputs and accumulates results each clock cycle"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
-  tiles: "1x1"
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
   top_module:  "tt_um_mac"
 
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "mac_unit.v"
 
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
   ui[0]: "in_a[0]"
@@ -44,4 +52,5 @@ pinout:
   uio[6]: "in_b[6]"
   uio[7]: "in_b[7]"
 
+# Do not change!
 yaml_version: 6
